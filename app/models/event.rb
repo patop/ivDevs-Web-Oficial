@@ -5,7 +5,8 @@ class Event < ActiveRecord::Base
   # asociaciones
   belongs_to :tag
   belongs_to :user
-
+  #validaciones
+  validates :title, presence: true
 
 
   enum type_event: [:meetup, :workshop, :evento]

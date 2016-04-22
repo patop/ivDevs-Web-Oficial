@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :type %><br>
-    <%= f.select :type, options_for_select(Event.type_events.map {|k,v| [k,v]}) %>
+    <%= f.select :type, options_for_select(Event.type_events.map {|k,v| [k,k]}) %>
   </div>
   <div class="field">
     <%= f.label :tag_id %><br>
