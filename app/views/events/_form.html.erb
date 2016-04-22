@@ -20,8 +20,8 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.select :type, options_for_select(Event.type_events.map {|k,v| [k,k]}) %>
+    <%= f.label :type_event %><br>
+    <%= f.select :type_event, options_for_select(Event.type_events.map {|k,v| [k,k]}) %>
   </div>
   <div class="field">
     <%= f.label :tag_id %><br>
