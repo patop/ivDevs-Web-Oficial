@@ -2,5 +2,5 @@ class Event < ActiveRecord::Base
   belongs_to :tag
   belongs_to :user
 
-  enum type: [:meetup, :workshop, :evento]
+  enum type_event: [:meetup, :workshop, :evento]
 end

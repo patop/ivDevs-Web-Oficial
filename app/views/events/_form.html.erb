@@ -21,10 +21,10 @@
   </div>
   <div class="field">
     <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.select :type, options_for_select(Event.type_events.map {|k,v| [k,v]}) %>
   </div>
   <div class="field">
-    <%= f.label :teg_id %><br>
+    <%= f.label :tag_id %><br>
     <%= f.text_field :tag_id %>
   </div>
   <div class="field">
