@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ranking_id: 
+  user_id: 
+  points: 1
+  description: MyText
+
+two:
+  ranking_id: 
+  user_id: 
+  points: 1
+  description: MyText
