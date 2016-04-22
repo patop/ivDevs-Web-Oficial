@@ -5,7 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: [:admin, :editor, :miembro]
+
   
+  has_many :events
+
+
   def full_name
   	name.humanize.to_s + ' ' + lastname.humanize.to_s
   end
