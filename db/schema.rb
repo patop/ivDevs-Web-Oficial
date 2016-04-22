@@ -11,7 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421003626) do
+ActiveRecord::Schema.define(version: 20160422022615) do
+
+  create_table "articles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.integer  "category_id"
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "status"
+    t.string   "slug"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "type"
+  end
+
+  add_index "articles", ["tag_id"], name: "index_articles_on_tag_id"
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "rankings", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "user_rankings", force: :cascade do |t|
+    t.integer  "ranking_id"
+    t.integer  "user_id"
+    t.integer  "points"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_rankings", ["ranking_id"], name: "index_user_rankings_on_ranking_id"
+  add_index "user_rankings", ["user_id"], name: "index_user_rankings_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
