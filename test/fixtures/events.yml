@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  type: 
+  teg_id: 
+  date_event: 2016-04-22 00:25:52
+  hour_start: 2016-04-22 00:25:52
+  hour_finish: 2016-04-22 00:25:52
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  user_id: 
+
+two:
+  title: MyString
+  description: MyText
+  type: 
+  teg_id: 
+  date_event: 2016-04-22 00:25:52
+  hour_start: 2016-04-22 00:25:52
+  hour_finish: 2016-04-22 00:25:52
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  user_id: 
