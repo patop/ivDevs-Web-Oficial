@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160422051206) do
+
   create_table "articles", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tag_id"
@@ -35,6 +35,25 @@ ActiveRecord::Schema.define(version: 20160422051206) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "date_event"
+    t.time     "hour_start"
+    t.time     "hour_finish"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "tag_id"
+    t.integer  "type_event"
+  end
+
+  add_index "events", ["tag_id"], name: "index_events_on_tag_id"
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "rankings", force: :cascade do |t|
     t.string   "title"
@@ -61,27 +80,6 @@ ActiveRecord::Schema.define(version: 20160422051206) do
 
   add_index "user_rankings", ["ranking_id"], name: "index_user_rankings_on_ranking_id"
   add_index "user_rankings", ["user_id"], name: "index_user_rankings_on_user_id"
-
-
-  create_table "events", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "date_event"
-    t.time     "hour_start"
-    t.time     "hour_finish"
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "tag_id"
-    t.integer  "type_event"
-  end
-
-  add_index "events", ["tag_id"], name: "index_events_on_tag_id"
-  add_index "events", ["user_id"], name: "index_events_on_user_id"
-
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
